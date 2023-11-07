@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LabCase;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
@@ -15,7 +16,8 @@ class LabCaseController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Cases/Index');
+        return Inertia::render('Cases/Index', [
+            'labCases' => Auth::user()->account->labCases]);
     }
 
     /**

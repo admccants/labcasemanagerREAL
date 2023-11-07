@@ -1,5 +1,6 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import GuestLayout from "@/Layouts/GuestLayout.vue";
+import {Head} from "@inertiajs/vue3";
 
 defineProps({
     canLogin: {
@@ -12,8 +13,9 @@ defineProps({
 </script>
 
 <template>
-    <Head title="Welcome" />
-
+    <GuestLayout>
+        <Head title="LabPro Suite" />
+    </GuestLayout>
 </template>
 
 <style>

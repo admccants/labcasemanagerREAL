@@ -34,6 +34,8 @@ Route::middleware('guest')->group(function () {
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.store');
+
+    Route::inertia('pricing', 'Landing/Pricing')->name('pricing');
 });
 
 Route::middleware('auth')->group(function () {

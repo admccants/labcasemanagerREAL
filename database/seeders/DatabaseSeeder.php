@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Account;
+use App\Models\LabCase;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,7 +14,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+
+
+        $account = Account::create(['name' => 'ACME CORP']);
+
+        \App\Models\User::factory(10)->create([
+            'account_id'=>$account->id]
+         );
+
+        LabCase::factory(5)->create([
+            'account_id'=>$account->id
+        ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
