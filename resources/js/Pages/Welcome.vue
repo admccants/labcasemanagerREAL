@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 defineProps({
     canLogin: {
@@ -12,8 +12,9 @@ defineProps({
 </script>
 
 <template>
-    <Head title="Welcome" />
-
+    <GuestLayout>
+        <Head title="Welcome" />
+    </GuestLayout>
 </template>
 
 <style>
