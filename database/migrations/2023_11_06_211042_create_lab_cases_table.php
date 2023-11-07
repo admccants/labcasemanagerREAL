@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('account_id')->index();
             $table->integer('customer_id')->index();
+            $table->integer('user_case_id');
             $table->string('patient_first_name',30);
             $table->string('patient_last_name',30);
             $table->string('pan_number', 5)->nullable();

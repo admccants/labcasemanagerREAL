@@ -18,8 +18,9 @@ class LabCaseFactory extends Factory
     public function definition(): array
     {
         return [
-            'account_id' => 1,
+            'account_id'=>1,
             'customer_id' => 1,
+            'user_case_id' => 1000,
             'patient_first_name' => fake()->name(),
             'patient_last_name' => fake()->name(),
         ];

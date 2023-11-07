@@ -16,14 +16,25 @@ class DatabaseSeeder extends Seeder
     {
 
 
-        $account = Account::create(['name' => 'ACME CORP']);
+        $account = Account::create(['name' => fake()->company()]);
 
         \App\Models\User::factory(10)->create([
             'account_id'=>$account->id]
          );
 
+//        LabCase::factory(5)->create([
+//            'account_id'=>$account->id,
+//            'user_case_id' => LabCase::where('account_id', $account->id)->max('user_case_id')+1,
+//        ]);
+
+        $latestUserCaseId = 1000;
+
         LabCase::factory(5)->create([
-            'account_id'=>$account->id
+            'account_id' => $account->id,
+            'user_case_id' => function () use (&$latestUserCaseId) {
+                $latestUserCaseId++;
+                return $latestUserCaseId;
+            },
         ]);
 
         // \App\Models\User::factory()->create([
