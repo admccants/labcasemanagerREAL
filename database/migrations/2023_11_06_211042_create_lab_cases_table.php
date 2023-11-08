@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('patient_first_name',30);
             $table->string('patient_last_name',30);
             $table->string('pan_number', 5)->nullable();
+            $table->float('price')->nullable();
             $table->timestamps();
         });
     }

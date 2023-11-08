@@ -15,10 +15,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-
         $account = Account::create(['name' => fake()->company()]);
 
-        \App\Models\User::factory(10)->create([
+        \App\Models\User::factory(3)->create([
             'account_id'=>$account->id]
          );
 

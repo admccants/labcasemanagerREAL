@@ -134,7 +134,10 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Content -->
             <main>
-                <slot />
+
+                <div class="mx-2 p-10 sm:mx-10 lg:mx-10 xl:mx-36 px-4 py-8 md:flex-1 md:overflow-y-auto">
+                    <slot />
+                </div>
             </main>
         </div>
     </div>
