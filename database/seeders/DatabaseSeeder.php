@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
 
         $latestUserCaseId = 1000;
 
-        LabCase::factory(5)->create([
+        LabCase::factory(25)->create([
             'account_id' => $account->id,
             'user_case_id' => function () use (&$latestUserCaseId) {
                 $latestUserCaseId++;

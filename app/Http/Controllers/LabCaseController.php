@@ -17,7 +17,7 @@ class LabCaseController extends Controller
     public function index()
     {
         return Inertia::render('Cases/Index', [
-            'labCases' => Auth::user()->account->labCases]);
+            'labCases' => Auth::user()->account->labCases()->orderBy('created_at')->paginate(24)->withQueryString()]);
     }
 
     /**
