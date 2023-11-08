@@ -17,7 +17,20 @@ class LabCaseController extends Controller
     public function index()
     {
         return Inertia::render('Cases/Index', [
-            'labCases' => Auth::user()->account->labCases()->orderBy('created_at')->paginate(24)->withQueryString()]);
+            'labCases' => Auth::user()->account->labCases()
+                ->with('customer')
+                ->orderBy('created_at')->paginate(24)->withQueryString()
+                ->through(fn ($labCase) => [
+                    'id'=>$labCase->user_case_id,
+                    'due_date'=>'TODO',
+                    'date_out'=>'TODO',
+                    'creation_date'=>$labCase->created_at,
+                    'pan'=>$labCase->pan_number,
+                    'cost'=>$labCase->price,
+                    'customer'=>$labCase->customer ? $labCase->customer->first_name . ' ' . $labCase->customer->last_name : null,
+                    'patient'=>$labCase->patient_first_name. ' ' .$labCase->patient_last_name
+                ])
+        ]);
     }
 
     /**

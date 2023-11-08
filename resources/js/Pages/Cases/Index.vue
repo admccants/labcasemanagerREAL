@@ -33,43 +33,43 @@ defineProps({
 <!--                        User specific case num-->
                         <td class="border-t">
                             <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/cases/${labCase.id}`">
-                                {{labCase.user_case_id}}
+                                {{labCase.id}}
                             </Link>
                         </td>
 <!--                        Due Date-->
                         <td class="border-t">
                             <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/cases/${labCase.id}`">
-                                {{labCase.updated_at}}
+                                {{labCase.due_date}}
                             </Link>
                         </td>
 <!--                        Date Out-->
                         <td class="border-t">
                             <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/cases/${labCase.id}`">
-                                {{labCase.updated_at}}
+                                {{labCase.date_out}}
                             </Link>
                         </td>
 <!--                        Pan-->
                         <td class="border-t">
                             <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/cases/${labCase.id}`">
-                                {{labCase.pan_number}}
+                                {{labCase.pan}}
                             </Link>
                         </td>
 <!--                        Customer-->
                         <td class="border-t">
                             <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/cases/${labCase.id}`">
-                                {{labCase.pan_number}}
+                                {{labCase.customer}}
                             </Link>
                         </td>
 <!--                        Patient-->
                         <td class="border-t">
                             <Link class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/cases/${labCase.id}`">
-                                {{labCase.patient_first_name}} {{labCase.patient_last_name}}
+                                {{labCase.patient}}
                             </Link>
                         </td>
 <!--                        Amount-->
                         <td class="border-t">
                             <Link method="get" class="flex items-center px-6 py-4 focus:text-indigo-500" :href="`/cases/${labCase.id}`">
-                                <span v-if="labCase.price">${{labCase.price}}</span>
+                                <span v-if="labCase.cost">${{labCase.cost}}</span>
                             </Link>
                         </td>
                     </tr>
